@@ -4,6 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "dora -p 8001 --plugins atool-build,proxy,hmr",
+    "lint": "eslint --ext .js,.jsx src",
+    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,17 @@
   "bugs": {
     "url": "https://github.com/soulwu/sandu/issues"
   },
-  "homepage": "https://github.com/soulwu/sandu#readme"
+  "homepage": "https://github.com/soulwu/sandu#readme",
+  "dependencies": {
+    "antd": "^1.6.5",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  },
+  "devDependencies": {
+    "atool-build": "^0.7.15",
+    "dora": "^0.4.0",
+    "dora-plugin-atool-build": "^0.4.1",
+    "dora-plugin-hmr": "^0.6.1",
+    "dora-plugin-proxy": "^0.7.0"
+  }
 }
