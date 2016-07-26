@@ -1,34 +1,27 @@
 {
   "name": "sandu",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "dora -p 8001 --plugins atool-build,proxy,hmr",
-    "lint": "eslint --ext .js,.jsx src",
-    "build": "atool-build -o ./dist/${npm_package_family}/${npm_package_name}/${npm_package_version}",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/soulwu/sandu.git"
-  },
-  "author": "soulwu",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/soulwu/sandu/issues"
-  },
-  "homepage": "https://github.com/soulwu/sandu#readme",
+  "version": "0.0.0",
+  "private": true,
   "dependencies": {
-    "antd": "^1.6.5",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "keystone": "^0.3.19",
+    "async": "^1.5.0",
+    "lodash": "^4.13.1",
+    "node-sass": "^3.3.2",
+    "node-sass-middleware": "^0.9.7", 
+    "dotenv": "^2.0.0"
   },
   "devDependencies": {
-    "atool-build": "^0.7.15",
-    "dora": "^0.4.0",
-    "dora-plugin-atool-build": "^0.4.1",
-    "dora-plugin-hmr": "^0.6.1",
-    "dora-plugin-proxy": "^0.7.0"
+    "eslint": "^2.12.0",
+    "eslint-config-keystone": "^2.3.1",
+    "eslint-plugin-react": "^5.1.1",
+    "gulp": "^3.7.0",
+    "gulp-shell": "^0.5.0",
+    "gulp-watch": "^4.3.5",
+    "gulp-sass": "^2.0.4"
+    
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node keystone.js"
   }
 }
