@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': 'sandu',
-	'brand': 'sandu',
+	'name': '三度资讯嘉兴希望杯',
+	'brand': '三度资讯嘉兴希望杯',
 
 	'sass': 'public',
 	'static': 'public',
@@ -43,7 +43,8 @@ keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
-	users: 'users',
+	'用户管理': 'users',
+	'内容管理': ['post-categories', 'posts']
 });
 
 // Start Keystone to connect to your database and initialise the web server
