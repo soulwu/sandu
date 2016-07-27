@@ -14,7 +14,7 @@ keystone.init({
 	'brand': '三度资讯嘉兴希望杯',
 
 	'sass': 'public',
-	'static': 'public',
+	'static': ['public', 'data'],
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
@@ -23,6 +23,12 @@ keystone.init({
 	'session': true,
 	'auth': true,
 	'user model': 'User',
+	'mongo': 'mongodb://localhost/sandu',
+
+	'wysiwyg additional buttons': '',
+	'wysiwyg additional plugins': '',
+	'wysiwyg additional options': {},
+	'wysiwyg menubar': true
 });
 
 // Load your project's Models
@@ -46,6 +52,8 @@ keystone.set('nav', {
 	'用户管理': 'users',
 	'内容管理': ['post-categories', 'posts']
 });
+
+keystone.set('port', process.env.PORT || 8081);
 
 // Start Keystone to connect to your database and initialise the web server
 

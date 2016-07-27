@@ -11,18 +11,23 @@ var User = new keystone.List('User', {
 });
 
 User.add({
-	name: { type: Types.Name, required: true, index: true },
-	email: { type: Types.Email, initial: true, required: true, index: true },
-	password: { type: Types.Password, initial: true, required: true },
+	name: {type: Types.Text, label: '姓名', required: true, index: true},
+	email: {type: Types.Email, label: '邮箱', initial: true, required: true, index: true},
+	password: {type: Types.Password, label: '密码', initial: true, required: true},
 }, 'Permissions', {
-	isAdmin: { type: Boolean, label: '是否管理员', index: true },
+	isAdmin: {type: Types.Boolean, label: '是否管理员', index: true},
 });
 
 // Provide access to Keystone
-User.schema.virtual('canAccessKeystone').get(function () {
+User.schema.virtual('canAccessKeystone').get(function() {
 	return this.isAdmin;
 });
 
+User.relationship({
+	path: 'posts',
+	ref: 'Post',
+	refPath: 'author'
+});
 
 /**
  * Registration
