@@ -1,0 +1,6 @@
+mixin pagination(pages, baseUrl, currentPage, previous, next)
+	nav: ul.pagination
+		li(class=classnames({disabled: !previous})): a(href=previous ? '#{baseUrl}#{currentPage + 1}' : 'javascript:;'): span &laquo;
+		each page in pages
+			li(class=classnames({active: page == currentPage})): a(href=page == currentPage ? 'javascript:;' : '#{baseUrl}#{page}')= page
+		li(class=classnames({disabled: !next})): a(href=next ? '#{baseUrl}#{currentPage + 1}' : 'javascript:;'): span &raquo;

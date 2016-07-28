@@ -8,6 +8,8 @@
  * modules in your project's /lib directory.
  */
 var _ = require('lodash');
+var keystone = require('keystone');
+var PostCategory = keystone.list('PostCategory');
 
 
 /**
@@ -18,11 +20,24 @@ var _ = require('lodash');
 	or replace it with your own templates / logic.
 */
 exports.initLocals = function (req, res, next) {
-	res.locals.navLinks = [
-		{ label: '首页', key: 'home', href: '/' },
+	res.locals.navLinks = [];
+	res.locals.breadcrumb = [
+		{href: '/', name: '首页'}
 	];
 	res.locals.user = req.user;
-	next();
+
+	PostCategory.model.find().exec().then(function(postCategories) {
+		for (var i = 0, len = postCategories.length; i < len; i++) {
+			res.locals.navLinks.push({
+				label: postCategories[i].name,
+				key: postCategories[i].id,
+				href: '/category?id=' + postCategories[i].id
+			});
+		}
+		next();
+	}, function() {
+		next();
+	});
 };
 
 
