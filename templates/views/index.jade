@@ -1,12 +1,18 @@
 extends ../layouts/default
 
 block content
-	.container: .row
+	.container
 		if categories
-			each category in categories
-				.col-md-6
-					h3= category.name
-					if posts[category.id]
-						ul.list-unstyled
-							each post in posts[category.id]
-								li: h4: a(href='/post?id=#{post.id}', target='_blank')= post.title
+			each group in _.chunk(categories, 2)
+				.row
+					each category in group
+						.col-md-6
+							.page-header
+								h3.container-fluid: p.row= category.name
+									small.col-xs-offset-10: a(href='/category?cid=#{category.id}', target='_blank') 更多
+							if posts[category.id]
+								ul.list-unstyled.container-fluid
+									each post in posts[category.id]
+										li: p.row
+											a(href='/post?cid=#{category.id}&pid=#{post.id}', target='_blank')= post.title
+											span.col-xs-offset-9= post._.publishedAt.format('YYYY-MM-DD')

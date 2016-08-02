@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var PostCategory = keystone.list('PostCategory');
 var Post = keystone.list('Post');
 
-exports = module.exports = function (req, res) {
+exports = module.exports = function(req, res) {
 
 	var view = new keystone.View(req, res);
 	var locals = res.locals;

@@ -1,0 +1,15 @@
+extends ../layouts/default
+include ../mixins/breadcrumb
+
+block content
+	.container
+		+breadcrumb()
+		.page-header.text-center: h1= post.title
+		.container-fluid
+			p!= post.content
+		if post.attachments.length
+			hr
+			.container-fluid: ul.list-inline
+				li 附件：
+				each attachment in post.attachments
+					li: a(href='/attachment?pid=#{post.id}&aid=#{attachment.id}')= attachment.originalname

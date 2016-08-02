@@ -18,7 +18,7 @@ Post.add({
 	author: {type: Types.Relationship, label: '作者', ref: 'User'},
 	publishedAt: {type: Types.Datetime, label: '发布时间', format: 'YYYY-MM-DD HH:mm:ss', hidden: true},
 	content: {type: Types.Html, label: '正文', wysiwyg: true, height: 400},
-	attachment: {
+	attachments: {
 		type: Types.LocalFiles,
 		label: '附件',
 		dest: 'data/files',
