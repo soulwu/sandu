@@ -1,10 +1,17 @@
 extends ../layouts/default
 include ../mixins/breadcrumb
 
+block css
+	link(href="/styles/post.css", rel="stylesheet")
+
 block content
 	.container
 		+breadcrumb()
-		.page-header.text-center: h1= post.title
+		.page-header.text-center
+			h1= post.title
+			p: small= post._.publishedAt.format('YYYY-MM-DD HH:mm:ss')
+				| &nbsp;&nbsp;&nbsp;&nbsp;
+				= post.author.name
 		.container-fluid
 			p!= post.content
 		if post.attachments.length
@@ -12,4 +19,7 @@ block content
 			.container-fluid: ul.list-inline
 				li 附件：
 				each attachment in post.attachments
-					li: a(href='/attachment?pid=#{post.id}&aid=#{attachment.id}')= attachment.originalname
+					li
+						span.glyphicon.file-icon(class='glyphicon-' + fileicon(attachment.filename))
+						a(href='/attachment?pid=#{post.id}&aid=#{attachment.id}')= attachment.originalname
+						span= '(' + filesize(attachment.size) + ')'

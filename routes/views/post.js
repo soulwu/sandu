@@ -1,3 +1,4 @@
+var path = require('path');
 var keystone = require('keystone');
 var PostCategory = keystone.list('PostCategory');
 var Post = keystone.list('Post');
@@ -16,7 +17,33 @@ exports = module.exports = function(req, res) {
 		next();
 	});
 
-	view.query('post', Post.model.findById(pid));
+	view.query('post', Post.model.findById(pid).populate('author'));
 
-	view.render('post');
+	view.render('post', {
+		filesize: require('filesize'),
+		fileicon: function(filename) {
+			var ext = path.extname(filename);
+
+			switch (ext) {
+				case '.mp3':
+				case '.aac':
+				case '.wma':
+				case '.wav':
+					return 'music';
+				case '.avi':
+				case '.mp4':
+				case '.mkv':
+					return 'film';
+				case '.png':
+				case '.gif':
+				case '.jpg':
+				case '.jpeg':
+				case '.bmp':
+				case '.psd':
+					return 'picture';
+				default:
+					return 'file';
+			}
+		}
+	});
 };
