@@ -9,7 +9,7 @@ block content
 						.col-md-6
 							.page-header
 								h3.container-fluid: p.row= category.name
-									small.col-xs-offset-10: a(href='/category?cid=#{category.id}', target='_blank') 更多
+									small.col-xs-offset-9.text-right: a(href='/category?cid=#{category.id}', target='_blank') 更多
 							if posts[category.id]
 								ul.list-unstyled.container-fluid
 									each post in posts[category.id]
