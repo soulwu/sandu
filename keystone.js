@@ -29,7 +29,7 @@ keystone.init({
 
 	'wysiwyg images': true,
 	'wysiwyg additional buttons': '',
-	'wysiwyg additional plugins': 'advlist,anchor,autolink,autoresize,autosave,bbcode,charmap,codesample,colorpicker,compat3x,contextmenu,directionality,emoticons,fullpage,fullscreen,hr,imagetools,importcss,insertdatetime,layer,legacyoutput,link,lists,media,nonbreaking,noneditable,pagebreak,paste,preview,print,save,searchreplace,spellchecker,tabfocus,table,template,textcolor,textpattern,visualblocks,visualchars,wordcount',
+	'wysiwyg additional plugins': 'advlist,anchor,autolink,autoresize,autosave,bbcode,charmap,colorpicker,compat3x,contextmenu,directionality,emoticons,fullpage,fullscreen,hr,importcss,insertdatetime,layer,legacyoutput,link,lists,media,nonbreaking,noneditable,pagebreak,paste,preview,print,save,searchreplace,spellchecker,tabfocus,table,template,textcolor,textpattern,visualblocks,visualchars,wordcount',
 	'wysiwyg additional options': {},
 	'wysiwyg menubar': true
 });
