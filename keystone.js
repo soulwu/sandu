@@ -21,6 +21,7 @@ keystone.init({
 
 	'auto update': true,
 	'session': true,
+	'session store': 'connect-redis',
 	'trust proxy': true,
 	'auth': true,
 	'user model': 'User',
