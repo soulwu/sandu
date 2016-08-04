@@ -21,12 +21,14 @@ keystone.init({
 
 	'auto update': true,
 	'session': true,
+	'trust proxy': true,
 	'auth': true,
 	'user model': 'User',
 	'mongo': 'mongodb://localhost/sandu',
 
+	'wysiwyg images': true,
 	'wysiwyg additional buttons': '',
-	'wysiwyg additional plugins': 'advlist,anchor,autolink,autoresize,autosave,bbcode,charmap,code,codesample,colorpicker,compat3x,contextmenu,directionality,emoticons,fullpage,fullscreen,hr,image,imagetools,importcss,insertdatetime,layer,legacyoutput,link,lists,media,nonbreaking,noneditable,pagebreak,paste,preview,print,save,searchreplace,spellchecker,tabfocus,table,template,textcolor,textpattern,uploadimage,visualblocks,visualchars,wordcount',
+	'wysiwyg additional plugins': 'advlist,anchor,autolink,autoresize,autosave,bbcode,charmap,codesample,colorpicker,compat3x,contextmenu,directionality,emoticons,fullpage,fullscreen,hr,imagetools,importcss,insertdatetime,layer,legacyoutput,link,lists,media,nonbreaking,noneditable,pagebreak,paste,preview,print,save,searchreplace,spellchecker,tabfocus,table,template,textcolor,textpattern,visualblocks,visualchars,wordcount',
 	'wysiwyg additional options': {},
 	'wysiwyg menubar': true
 });
