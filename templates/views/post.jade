@@ -11,7 +11,7 @@ block content
 			h1= post.title
 			p: small= post._.publishedAt.format('YYYY-MM-DD HH:mm:ss')
 		.container-fluid
-			p.post-content!= post.content
+			div.post-content!= post.content
 		if post.attachments.length
 			hr
 			.container-fluid: ul.list-inline

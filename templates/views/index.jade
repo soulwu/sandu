@@ -15,4 +15,4 @@ block content
 									each post in posts[category.id]
 										li: p.row
 											a(href='/post?cid=#{category.id}&pid=#{post.id}')= post.title
-											span.col-xs-offset-9= post._.publishedAt.format('YYYY-MM-DD')
+											span.col-xs-offset-4= post._.publishedAt.format('YYYY-MM-DD')
