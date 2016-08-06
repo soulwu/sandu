@@ -9,6 +9,6 @@ block content
 			if posts
 				each post in posts.results
 					p.row
-						.col-md-10: a(href='/post?cid=#{category.id}&pid=#{post.id}', target='_blank')= post.title
+						.col-md-10: a(href='/post?cid=#{category.id}&pid=#{post.id}')= post.title
 						.col-md-2.text-right= post._.publishedAt.format('YYYY-MM-DD')
 				+pagination(posts.pages, baseUrl, posts.currentPage, posts.previous, posts.next)

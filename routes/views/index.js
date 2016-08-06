@@ -20,7 +20,7 @@ exports = module.exports = function(req, res) {
 	view.on('init', function(next) {
 		if (locals.categories) {
 			locals.categories.map(function(category) {
-				view.query('posts.' + category.id, Post.model.find().where('categories').in([category.id]).sort('-publishedAt').limit(5));
+				view.query('posts.' + category.id, Post.model.find().where({state: '已发布'}).where('categories').in([category.id]).sort('-publishedAt').limit(5));
 			});
 		}
 

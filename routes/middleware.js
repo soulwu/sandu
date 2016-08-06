@@ -31,7 +31,7 @@ exports.initLocals = function (req, res, next) {
 			res.locals.navLinks.push({
 				label: postCategories[i].name,
 				key: postCategories[i].id,
-				href: '/category?id=' + postCategories[i].id
+				href: '/category?cid=' + postCategories[i].id
 			});
 		}
 		next();

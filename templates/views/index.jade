@@ -9,10 +9,10 @@ block content
 						.col-md-6
 							.page-header
 								h3.container-fluid: p.row= category.name
-									small.col-xs-offset-9.text-right: a(href='/category?cid=#{category.id}', target='_blank') 更多
+									small.col-xs-offset-9.text-right: a(href='/category?cid=#{category.id}') 更多
 							if posts[category.id]
 								ul.list-unstyled.container-fluid
 									each post in posts[category.id]
 										li: p.row
-											a(href='/post?cid=#{category.id}&pid=#{post.id}', target='_blank')= post.title
+											a(href='/post?cid=#{category.id}&pid=#{post.id}')= post.title
 											span.col-xs-offset-9= post._.publishedAt.format('YYYY-MM-DD')
