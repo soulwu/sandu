@@ -15,7 +15,6 @@ Post.add({
 	title: {type: Types.Text, label: '标题', required: true},
 	state: {type: Types.Select, label: '状态', options: '草稿, 已发布, 已归档', default: '草稿', emptyOption: false, required: true},
 	categories: {type: Types.Relationship, label: '栏目', ref: 'PostCategory', many: true, required: true, initial: true},
-	author: {type: Types.Relationship, label: '作者', ref: 'User'},
 	publishedAt: {type: Types.Datetime, label: '发布时间', format: 'YYYY-MM-DD HH:mm:ss', hidden: true},
 	content: {type: Types.Html, label: '正文', wysiwyg: true, height: 400},
 	attachments: {

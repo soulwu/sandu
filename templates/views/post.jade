@@ -10,10 +10,8 @@ block content
 		.page-header.text-center
 			h1= post.title
 			p: small= post._.publishedAt.format('YYYY-MM-DD HH:mm:ss')
-				| &nbsp;&nbsp;&nbsp;&nbsp;
-				= post.author.name
 		.container-fluid
-			p!= post.content
+			p.post-content!= post.content
 		if post.attachments.length
 			hr
 			.container-fluid: ul.list-inline

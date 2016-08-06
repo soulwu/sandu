@@ -17,7 +17,7 @@ exports = module.exports = function(req, res) {
 		next();
 	});
 
-	view.query('post', Post.model.findById(pid).populate('author'));
+	view.query('post', Post.model.findById(pid));
 
 	view.render('post', {
 		filesize: require('filesize'),
