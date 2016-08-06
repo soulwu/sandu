@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
 	locals.section = 'home';
 
 	view.on('init', function(next) {
-		PostCategory.model.find().exec(function(err, categories) {
+		PostCategory.model.find().where({isShow: true}).sort('order').exec(function(err, categories) {
 			locals.categories = categories;
 			next();
 		});

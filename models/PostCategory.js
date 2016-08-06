@@ -7,7 +7,9 @@ var PostCategory = new keystone.List('PostCategory', {
 });
 
 PostCategory.add({
-	name: {type: Types.Text, label: '名称', required: true}
+	name: {type: Types.Text, label: '名称', required: true},
+	order: {type: Types.Number, label: '排序', default: 999},
+	isShow: {type: Types.Boolean, label: '是否显示在首页', default: true}
 });
 
 PostCategory.relationship({
