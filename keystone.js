@@ -27,6 +27,7 @@ keystone.init({
 	'user model': 'User',
 	'mongo': 'mongodb://localhost/sandu',
 
+	'wysiwyg skin': 'lightgray',
 	'wysiwyg override toolbar': true,
 	'wysiwyg additional plugins': 'advlist,anchor,autolink,charmap,colorpicker,directionality,hr,image,insertdatetime,lists,media,noneditable,paste,searchreplace,table,textcolor,wordcount',
 	'wysiwyg additional options': {
