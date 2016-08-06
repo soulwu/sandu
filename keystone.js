@@ -31,7 +31,8 @@ keystone.init({
 	'wysiwyg override toolbar': true,
 	'wysiwyg additional plugins': 'advlist,anchor,autolink,charmap,colorpicker,directionality,hr,image,insertdatetime,lists,media,noneditable,paste,searchreplace,table,textcolor,wordcount',
 	'wysiwyg additional options': {
-		toolbar: 'bold italic forecolor backcolor | alignleft aligncenter alignright | bullist numlist | outdent indent | charmap image media | link unlink | anchor | code'
+		toolbar: 'undo redo cut copy paste | bold italic underline strikethrough forecolor backcolor | styleselect formatselect fontselect fontsizeselect | alignleft aligncenter alignright | bullist numlist | outdent indent | charmap image media | link unlink | anchor | code',
+		language_url: '/js/tinymce/langs/zh_CN.js'
 	},
 	'wysiwyg menubar': true
 });
