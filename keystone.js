@@ -10,8 +10,8 @@ var keystone = require('keystone');
 // and documentation.
 
 keystone.init({
-	'name': '三度资讯嘉兴希望杯',
-	'brand': '三度资讯嘉兴希望杯',
+	'name': '三度资讯 - 嘉兴希望杯',
+	'brand': '三度资讯 - 嘉兴希望杯',
 
 	'sass': 'public',
 	'static': ['public', 'data'],
@@ -27,10 +27,11 @@ keystone.init({
 	'user model': 'User',
 	'mongo': 'mongodb://localhost/sandu',
 
-	'wysiwyg images': true,
-	'wysiwyg additional buttons': '',
-	'wysiwyg additional plugins': 'advlist,anchor,autolink,autoresize,autosave,bbcode,charmap,colorpicker,compat3x,contextmenu,directionality,emoticons,fullpage,fullscreen,hr,importcss,insertdatetime,layer,legacyoutput,link,lists,media,nonbreaking,noneditable,pagebreak,paste,preview,print,save,searchreplace,spellchecker,tabfocus,table,template,textcolor,textpattern,visualblocks,visualchars,wordcount',
-	'wysiwyg additional options': {},
+	'wysiwyg override toolbar': true,
+	'wysiwyg additional plugins': 'advlist,anchor,autolink,charmap,colorpicker,directionality,hr,image,insertdatetime,lists,media,noneditable,paste,searchreplace,table,textcolor,wordcount',
+	'wysiwyg additional options': {
+		toolbar: 'bold italic forecolor backcolor | alignleft aligncenter alignright | bullist numlist | outdent indent | charmap image media | link unlink | anchor | code'
+	},
 	'wysiwyg menubar': true
 });
 

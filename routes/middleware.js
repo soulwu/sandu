@@ -26,18 +26,7 @@ exports.initLocals = function (req, res, next) {
 	];
 	res.locals.user = req.user;
 
-	PostCategory.model.find().exec().then(function(postCategories) {
-		for (var i = 0, len = postCategories.length; i < len; i++) {
-			res.locals.navLinks.push({
-				label: postCategories[i].name,
-				key: postCategories[i].id,
-				href: '/category?cid=' + postCategories[i].id
-			});
-		}
-		next();
-	}, function() {
-		next();
-	});
+	next();
 };
 
 
